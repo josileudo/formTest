@@ -1,4 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+  height: 100%; 
+}
+
+html {
+  @media(max-width: 1080px) {
+    font-size: 93.75%;
+  }
+  @media(min-width: 720px){
+    font-size: 87.5%;
+  }
+}
+
+body {
+  -webkit-font-smooting: antialiased;
+}
+
+body, p, input, button, textarea {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+button { 
+  cursor: pointer;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
