@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+@import './colors.scss';
+
+@include mat-core();
+
+// mandatory stuff for theming
+$bv-palette-primary: mat-palette($gray-color, 800);
+$bv-palette-accent:  mat-palette($teal-color);
+
+// include the custom theme components into a theme object
+$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($bv-theme);
