@@ -16,7 +16,7 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography); 
 
 $bv-palette-primary: mat-palette($gray-color, 800);
-$bv-palette-accent:  mat-palette($teal-color);
+$bv-palette-accent:  mat-palette($teal-color, 300);
 
 $bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
 

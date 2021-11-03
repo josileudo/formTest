@@ -1,0 +1,15 @@
+@import "../../../styles/my-theme.scss";
+
+.toolbar {
+  display: flex; 
+  justify-content: space-between;
+  
+  &__title{
+    font-weight: bold;
+    
+    &:last-child {   
+      color: mat-color(map_get($bv-theme, accent));
+    }
+  }
+}
+
