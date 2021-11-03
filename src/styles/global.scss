@@ -1,3 +1,4 @@
+@import './my-theme.scss';
 
 * {
   margin: 0;
@@ -20,6 +21,7 @@ html {
 
 body {
   -webkit-font-smooting: antialiased;
+  background: mat-color(map_get($bv-theme, primary));
 }
 
 body, p, input, button, textarea {

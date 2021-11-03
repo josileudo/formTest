@@ -1,14 +1,24 @@
 @import '~@angular/material/theming';
 @import './colors.scss';
+@import '../assets/styles/app-typography.scss';
 
-@include mat-core();
+@include mat-core(); 
 
-// mandatory stuff for theming
+// Typography  
+$custom-typography: mat-typography-config(  
+  $font-family: 'Poppins ',  
+  $headline: mat-typography-level(32px, 48px, 700),  
+  $body-1: mat-typography-level(16px, 24px, 500)  
+);  
+   
+@include mat-base-typography($custom-typography);  
+@include mat-checkbox-typography($custom-typography);  
+@include mat-core($custom-typography); 
+
 $bv-palette-primary: mat-palette($gray-color, 800);
 $bv-palette-accent:  mat-palette($teal-color);
 
-// include the custom theme components into a theme object
 $bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
 
-// include the custom theme object into the angular material theme
 @include angular-material-theme($bv-theme);
+
