@@ -4,6 +4,11 @@
       <span class="toolbar__title">Viaja</span>
       <span class="toolbar__title">Mais</span>
     </div>
-    <mat-slide-toggle></mat-slide-toggle>
+    <mat-slide-toggle
+      [checked]="isDarkMode"
+      (change)="onDarkModeSwitched($event)"
+    >
+      Dark
+    </mat-slide-toggle>
   </mat-toolbar>
 </header>

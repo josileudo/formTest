@@ -15,10 +15,13 @@ $custom-typography: mat-typography-config(
 @include mat-checkbox-typography($custom-typography);  
 @include mat-core($custom-typography); 
 
-$bv-palette-primary: mat-palette($gray-color, 800);
-$bv-palette-accent:  mat-palette($teal-color, 300);
+$bv-palette-dark-primary: mat-palette($gray-color, 800); 
+$bv-palette-dark-accent:  mat-palette($teal-color, 300);
+ 
+$bv-palette-light-primary: mat-palette($gray-color, 100); 
+$bv-palette-light-accent:  mat-palette($teal-color, 600);
+ 
+$mat-theming-theme-dark: mat-dark-theme($bv-palette-dark-primary, $bv-palette-dark-accent);
+$mat-theming-theme: mat-light-theme($bv-palette-light-primary, $bv-palette-light-accent);
 
-$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
-
-@include angular-material-theme($bv-theme);
-
+// @include angular-material-theme($mat-theming-theme);
