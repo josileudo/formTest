@@ -1,6 +1,5 @@
 @import '~@angular/material/theming';
 @import './colors.scss';
-@import '../assets/styles/app-typography.scss';
 
 @include mat-core(); 
 
@@ -10,18 +9,28 @@ $custom-typography: mat-typography-config(
   $headline: mat-typography-level(32px, 48px, 700),  
   $body-1: mat-typography-level(16px, 24px, 500)  
 );  
-   
+
 @include mat-base-typography($custom-typography);  
 @include mat-checkbox-typography($custom-typography);  
 @include mat-core($custom-typography); 
-
-$bv-palette-dark-primary: mat-palette($gray-color, 800); 
-$bv-palette-dark-accent:  mat-palette($teal-color, 300);
  
-$bv-palette-light-primary: mat-palette($gray-color, 100); 
-$bv-palette-light-accent:  mat-palette($teal-color, 600);
- 
-$mat-theming-theme-dark: mat-dark-theme($bv-palette-dark-primary, $bv-palette-dark-accent);
-$mat-theming-theme: mat-light-theme($bv-palette-light-primary, $bv-palette-light-accent);
+// Light-color
+$mat-light-primary-palette: mat-palette($gray-color, 200); 
+$mat-light-accent-palette:  mat-palette($teal-color, 600);
 
-// @include angular-material-theme($mat-theming-theme);
+$light-theme: mat-light-theme($mat-light-primary-palette, $mat-light-accent-palette);
+.light-mode {
+  @include angular-material-theme($light-theme);
+}
+
+// Dark-Theme
+$mat-dark-primary-palette: mat-palette($gray-color, 800); 
+$mat-dark-accent-palette:  mat-palette($teal-color, 300);
+
+$dark-theme: mat-dark-theme($mat-dark-primary-palette, $mat-dark-accent-palette);
+.dark-mode {
+  @include angular-material-theme($dark-theme);
+}
+
+//initial theme
+@include angular-material-theme($light-theme);
