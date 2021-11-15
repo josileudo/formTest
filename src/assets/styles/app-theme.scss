@@ -1,8 +1,8 @@
 // Import here all themes for your custom components
-@import '../../app/app.component.scss-theme.scss';
+@import './../../app/app.component.scss-theme';
 
 // configured typography. Do not forget to include your custom typography there
-@import './app-typography';
+@import './_app-typography';
 
 @mixin app-style-core() {
   @include mat-ripple();
