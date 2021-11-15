@@ -1,4 +1,5 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, HostBinding, Inject, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,17 +7,23 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private isDark = true;
+  private currentTheme = "light-mode";
 
-  constructor(){}
+  get isDarkMode(): boolean {
+    return this.currentTheme === "dark-mode";
+  }
 
-  ngOnInit(){}
-  @HostBinding('class')
-  get themeMode() {
-    return this.isDark ? 'theme-dark' : 'theme-light';
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
+  ){}
+
+  ngOnInit(): void{
+    this.renderer.setAttribute(this.document.body, 'class', this.currentTheme)
   }
   
   switchMode(isDarkMode: boolean) {
-    this.isDark= isDarkMode;
+    this.currentTheme = isDarkMode ? "dark-mode" : 'light-mode';
+    this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
   }
 }

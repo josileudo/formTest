@@ -8,7 +8,7 @@
     font-weight: bold;
     
     &:last-child {   
-      color: mat-color(map_get($mat-theming-theme-dark, accent));
+      color: mat-color(map_get($dark-theme, accent));
     }
   }
 }

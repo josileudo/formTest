@@ -1,5 +1,7 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'sap-app-header',
@@ -8,17 +10,13 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input()
   isDarkMode = true;
   
   @Output()
   readonly darkModeSwitched = new EventEmitter<boolean>();
-  
-  constructor(){}
-  
-  ngOnInit(){}
-
+ 
   onDarkModeSwitched({ checked } : MatSlideToggleChange){
     this.darkModeSwitched.emit(checked);
   }

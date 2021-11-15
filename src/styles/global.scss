@@ -21,7 +21,7 @@ html {
 
 body {
   -webkit-font-smooting: antialiased;
-  // background: mat-color(map_get($mat-theming-theme-dark, primary));
+  //  background: mat-color(map_get($app-light-theme, primary));
 }
 
 body, p, input, button, textarea {
@@ -41,11 +41,4 @@ button {
 [disabled] {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.theme-dark {
-  @include angular-material-theme($mat-theming-theme-dark);
-}
-.theme-light {
-  @include angular-material-theme($mat-theming-theme);
 }
