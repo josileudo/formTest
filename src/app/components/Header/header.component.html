@@ -4,24 +4,23 @@
       <span class="toolbar__title">Viaja</span>
       <span color="accent" class="toolbar__title">Mais</span>
     </div>  
-    <mat-slide-toggle
-      [checked]="isDarkMode"
-      (change)="onDarkModeSwitched($event)"
-    >
-    <mat-icon 
-      [color]="isDarkMode ? '':'warn'"
-      aria-hidden="false" 
-      aria-label="Example home icon"
-    >
-      {{isDarkMode ? 'dark_mode':'light_mode'}}
-    </mat-icon>
-    </mat-slide-toggle>
-
-    <button 
-      mat-flat-button
-      color= "accent"  
-    >
-       Add Travel  
+      <mat-slide-toggle
+        [checked]="isDarkMode"
+        (change)="onDarkModeSwitched($event)"
+      >
+       <mat-icon 
+         [color]="isDarkMode ? '':'warn'"
+         aria-hidden="false" 
+        aria-label="Example home icon"
+       >
+        {{isDarkMode ? 'dark_mode':'light_mode'}}
+       </mat-icon>
+      </mat-slide-toggle>
+      <button 
+        mat-flat-button 
+        color= "accent"   
+      >
+      Add Travel  
     </button>
   </mat-toolbar>
 </header>

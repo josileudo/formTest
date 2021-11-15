@@ -33,4 +33,5 @@ $dark-theme: mat-dark-theme($mat-dark-primary-palette, $mat-dark-accent-palette)
 .dark-mode {
   @include angular-material-theme($dark-theme);
   background: mat-color(map_get($dark-theme, primary));
+  color: mat-color(map_get($light-theme, primary));
 }
