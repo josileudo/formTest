@@ -1,19 +1,15 @@
 @import '~@angular/material/theming';
 
+@import './typography.scss';
 @import './colors.scss';
 
 @include mat-core(); 
 
-// Typography  
-$custom-typography: mat-typography-config(  
-  $font-family: 'Poppins ',  
-  $headline: mat-typography-level(32px, 48px, 700),  
-  $body-1: mat-typography-level(16px, 24px, 500)  
-);  
-
-@include mat-base-typography($custom-typography);  
-@include mat-checkbox-typography($custom-typography);  
-@include mat-core($custom-typography); 
+// Typography
+@include mat-core($font-config);
+@include mat-base-typography($font-config);  
+@include mat-checkbox-typography($font-config);  
+@include mat-core($font-config); 
  
 // Light-color
 $mat-light-primary-palette: mat-palette($gray-color, 200); 

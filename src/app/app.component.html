@@ -1,12 +1,19 @@
-<sap-app-header 
-  (darkModeSwitched)="switchMode($event)"
-  [isDarkMode]="isDarkMode"
->
-</sap-app-header>
-
-<h1 mat-dialog-title>
-  You Welcome!! 
-</h1>
-<main class="main">
-  <sap-app-forms></sap-app-forms>
-</main>
+<div class="travel">
+  <header>
+    <sap-app-header 
+      (darkModeSwitched)="switchMode($event)"
+      [isDarkMode]="isDarkMode"
+    ></sap-app-header>
+  </header>
+  <section class="travel__main">
+    <div class="travel__title">
+      <span class="mat-display-2 travel__title-welcome">
+        Agende sua viagem
+      </span>
+      <span class="mat-display-2 travel__title-welcome">
+        com segurança.
+      </span>
+    </div>
+    <!-- <sap-app-forms></sap-app-forms> -->
+  </section>
+</div>

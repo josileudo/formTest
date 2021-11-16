@@ -1,3 +1,26 @@
-.input {
-  width: 15rem;
+@import '../styles/my-theme.scss';
+
+.travel {
+  .input {
+    width: 15rem;
+  }
+
+  &__main {
+    margin: auto 3rem;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+
+    .travel__title {
+      max-width: 50%;
+      text-align: center;
+      margin-top: 2rem;
+
+      &-welcome {
+        &:last-child {
+          color: mat-color(map_get($dark-theme, accent))
+        }
+      }
+    }
+  }
 }
