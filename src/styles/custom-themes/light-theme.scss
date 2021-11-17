@@ -1,0 +1,182 @@
+@use '../../../node_modules/@angular/material/index' as mat;
+@use 'sass:map';
+
+@use 'theming';
+@use "../components.style" as components;
+
+@include mat.core();
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.54);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: #1A202C;
+$light-secondary-text: rgba(#e2e8f0c5, 0.7);
+$light-disabled-text: rgba(#e2e8f086, 0.5);
+$light-disabled-button: rgba(#e2e8f038, 0.12);
+$light-dividers: rgba(#e2e8f038, 0.12);
+$light-focused: rgba(#e2e8f038, 0.12);
+
+$gray-color: (
+  50 : #F7FAFC,
+  100:#EDF2F7,
+  200:#E2E8F0,
+  300:#CBD5E0,
+  400:#A0AEC0,
+  500:#718096,
+  600:#4A5568,
+  700:#2D3748,
+  800:#1A202C,
+  900:#171923,
+  A100: #EDF2F7,
+  A200: #E2E8F0,
+  A400: #1A202C,
+  A700: #2D3748,
+  contrast: (
+    50:  rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: white,
+  )
+);
+
+$teal-color: (
+  50 :#E6FFFA,
+  100:#B2F5EA,
+  200:#81E6D9,
+  300:#4FD1C5,
+  400:#38B2AC,
+  500:#319795,
+  600:#2C7A7B,
+  700:#285E61,
+  800:#234E52,
+  900:#1D4044,
+  A100: #ffffff,
+  A200: #fff7f4,
+  A400: #fc8259,
+  A700: #f44205,
+  contrast: (
+    50:  rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: white,
+  )
+);
+
+$red-color: (
+  50 : #FFF5F5,
+  100: #FED7D7,
+  200: #FEB2B2,
+  300:  #FC8181,
+  400:  #F56565,
+  500:  #E53E3E,
+  600:  #C53030,
+  700:  #9B2C2C,
+  800:  #822727,
+  900:  #63171B,
+  contrast: (
+    50:  rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: white,
+  )
+);
+
+$light-theme-background-palette: (
+  status-bar: map.get($gray-color, 200), // use your palette or palette from  @angular\material\core\theming
+  app-bar: map.get($gray-color, 400),
+  background: map.get($gray-color, 200),
+  hover: rgba(black, 0.04),
+  card: map.get($gray-color, 400),
+  dialog: map.get($gray-color, 200),
+  disabled-button: rgba(black, 0.12),
+  raised-button: map.get($gray-color, 50),
+  focused-button: $light-focused,
+  selected-button: map.get($gray-color, 300),
+  selected-disabled-button: map.get($gray-color, 400),
+  disabled-button-toggle: map.get($gray-color, 400),
+  unselected-chip: map.get($gray-color, 400),
+  disabled-list-option: map.get($gray-color, 400),
+  tooltip: map.get($gray-color, 700),
+  // hear you can add your own keys and use it in _components
+  highlighted-text:  map.get($teal-color, 600),
+);
+
+$light-theme-foreground-palette: (
+  base: black,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $light-disabled-text,
+  disabled-button: $light-disabled-button,
+  disabled-text: $light-disabled-text,
+  elevation: black,
+  hint-text: $light-disabled-text,
+  secondary-text: $light-secondary-text,
+  icon: rgba(black, 0.54),
+  icons: rgba(black, 0.54),
+  text: $light-primary-text,
+  slider-min: rgba(black, 0.87),
+  slider-off: rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
+
+$light-primary: mat.define-palette($gray-color, 200);
+$light-accent: mat.define-palette($teal-color, 600);
+$light-warn: mat.define-palette($red-color, 500);
+
+$light-color-config: theming.mat-create-color-config(// see src/styles/custom-themes/_theming.scss
+  $light-primary,
+  $light-accent,
+  $light-warn,
+  true, 
+  $light-theme-foreground-palette, 
+  $light-theme-background-palette,
+);  
+
+$button-primary: mat.define-palette($teal-color, 600);
+$button-accent:  mat.define-palette($gray-color, 800);
+$button-warn:    mat.define-palette($red-color, 500);
+
+$button-color-config: theming.mat-create-color-config(
+  $button-primary, 
+  $button-accent,  
+  $button-warn,   
+  true,
+  $light-theme-foreground-palette, 
+  $light-theme-background-palette,
+);
+
+@include mat.all-component-themes($light-color-config);
+@include mat.button-color($button-color-config);
+@include components.theme($light-color-config);

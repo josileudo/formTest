@@ -1,0 +1,5 @@
+@use "../app/app.style" as body;
+
+@mixin theme($theme) {
+  @include body.theme($theme);
+}

@@ -1,5 +1,3 @@
-@import "../../../styles/my-theme.scss";
-
 .toolbar {
   display: flex; 
   justify-content: space-between;
@@ -8,7 +6,7 @@
     font-weight: bold;
     
     &:last-child {   
-      color: mat-color(map_get($dark-theme, accent));
+      // color: mat-color(map_get($dark-theme, accent));
     }
   }
 }
