@@ -11,7 +11,7 @@
   "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "ng serve"
+      "pre-commit": "npm start"
     }
   },
   "dependencies": {
