@@ -1,0 +1,14 @@
+{
+  "*.ts": [
+    "eslint 'src/**' --fix"
+  ],
+  "*.htnl": [
+    "eslint 'src/**' --fix"
+  ],
+  ".scss": [
+    "eslint 'src/**' --fix"
+  ],
+  "*less": [
+    "eslint 'src/**' --fix"
+  ]
+}

@@ -11,7 +11,8 @@
   "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "npm start"
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
     }
   },
   "dependencies": {
@@ -44,6 +45,9 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lint-staged": "^12.2.2",
+    "prettier": "^2.5.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~4.3.5"
   }
 }
