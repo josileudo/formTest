@@ -6,11 +6,11 @@
 
 @include mat.core();
 
-$dark-primary-text: rgba(black, 0.87);
-$dark-secondary-text: rgba(black, 0.54);
-$dark-disabled-text: rgba(black, 0.38);
-$dark-dividers: rgba(black, 0.12);
-$dark-focused: rgba(black, 0.12);
+$dark-primary-text: rgba(0,0,0, 0.87);
+$dark-secondary-text: rgba(0,0,0, 0.54);
+$dark-disabled-text: rgba(0,0,0, 0.38);
+$dark-dividers: rgba(0,0,0, 0.12);
+$dark-focused: rgba(0, 0, 0, 0.12);
 $light-primary-text: #1A202C;
 $light-secondary-text: rgba(#e2e8f0c5, 0.7);
 $light-disabled-text: rgba(#e2e8f086, 0.5);
@@ -122,7 +122,7 @@ $light-theme-background-palette: (
   dialog: map.get($gray-color, 200),
   disabled-button: rgba(black, 0.12),
   raised-button: map.get($gray-color, 50),
-  focused-button: $light-focused,
+  focused-button: $dark-focused,
   selected-button: map.get($gray-color, 300),
   selected-disabled-button: map.get($gray-color, 400),
   disabled-button-toggle: map.get($gray-color, 400),
@@ -137,18 +137,18 @@ $light-theme-foreground-palette: (
   base: black,
   divider: $dark-dividers,
   dividers: $dark-dividers,
-  disabled: $light-disabled-text,
+  disabled: $dark-disabled-text,
   disabled-button: $light-disabled-button,
   disabled-text: $light-disabled-text,
   elevation: black,
-  hint-text: $light-disabled-text,
-  secondary-text: $light-secondary-text,
-  icon: rgba(black, 0.54),
-  icons: rgba(black, 0.54),
+  hint-text: $dark-disabled-text,
+  secondary-text: $dark-secondary-text,
+  icon: rgba(0, 0, 0, 0.54),
+  icons: rgba(0, 0, 0, 0.54),
   text: $light-primary-text,
-  slider-min: rgba(black, 0.87),
-  slider-off: rgba(black, 0.26),
-  slider-off-active: rgba(black, 0.38),
+  slider-min:rgba(0, 0, 0, 0.842),
+  slider-off: rgba(0, 0, 0, 0.555),
+  slider-off-active: rgba(0,0,0, 0.38),
 );
 
 $light-primary: mat.define-palette($gray-color, 200);
