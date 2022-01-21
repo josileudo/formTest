@@ -10,7 +10,7 @@
   },
   "private": true,
   "husky": {
-    "pre-commit": "npm start"
+    "pre-commit": "ng serve"
   },
   "dependencies": {
     "@angular/animations": "^12.1.4",
